@@ -1,0 +1,80 @@
+<!-- START NAV -->
+<nav class="navbar">
+    <div class="container">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="../">
+                <%= image_tag "bulma.png", alt: "plesir" %>
+            </a>
+            <span class="navbar-burger burger" data-target="navbarMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+        </div>
+        <div id="navbarMenu" class="navbar-menu">
+            <div class="navbar-end">
+                <a class="navbar-item is-active">
+                    Hot
+                </a>
+                <a class="navbar-item">
+                    Fresh
+                </a>
+                <a class="navbar-item">
+                    Friends
+                </a>
+                <a class="navbar-item">
+                    Beach
+                </a>
+                <a class="navbar-item">
+                    Mountain
+                </a>
+                <a class="navbar-item">
+                    Culinary
+                </a>
+                <a class="navbar-item">
+                    History
+                </a>
+                <a class="navbar-item">
+                    Photos
+                </a>
+                <% if user_signed_in? %>
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link">
+                            <%= current_user.email %>
+                        </a>
+                        <div class="navbar-dropdown">
+                            <a class="navbar-item">
+                                Dashboard
+                            </a>
+                            <a class="navbar-item">
+                                Profile
+                            </a>
+                            <a class="navbar-item">
+                                Settings
+                            </a>
+                            <hr class="navbar-divider">
+
+                            <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class: "navbar-item" %>
+                        </div>
+                    </div>
+               <% else %>
+                    <%= link_to "Sign up", new_user_registration_path, class: "navbar-item" %>
+                    <%= link_to "sign in", new_user_session_path, class: "navbar-item" %>
+               <% end %>
+               
+            </div>
+        </div>
+    </div>
+</nav>
+<!-- END NAV -->
+<script>
+    (function () {
+        var burger = document.querySelector('.burger');
+        var menu = document.querySelector('#' + burger.dataset.target);
+        burger.addEventListener('click', function () {
+            burger.classList.toggle('is-active');
+            menu.classList.toggle('is-active');
+        });
+    })();
+
+</script>
