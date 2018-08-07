@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Plesir</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -12,9 +13,13 @@
 
 <body>
 <%= render "shared/navbar" %>
-<div class="container">
-  <%= yield %>
-</div>
+
+<section class="section">
+    <div class="container">
+      <%= yield %>
+    </div>
+</section>
+
 <%= render "shared/footer" %>
    
 </body>
