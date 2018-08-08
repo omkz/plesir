@@ -47,12 +47,8 @@
                             <a class="navbar-item" href="/articles">
                                 Dashboard
                             </a>
-                            <a class="navbar-item">
-                                Profile
-                            </a>
-                            <a class="navbar-item">
-                                Settings
-                            </a>
+                            
+                            <li><%= link_to 'Settings', edit_user_registration_path, class: "navbar-item" %></li>
                             <hr class="navbar-divider">
 
                             <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class: "navbar-item" %>
