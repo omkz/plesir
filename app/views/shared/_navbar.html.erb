@@ -3,7 +3,8 @@
     <div class="container">
         <div class="navbar-brand">
             <a class="navbar-item" href="../">
-                <%= image_tag "bulma.png", alt: "plesir" %>
+                <%# image_tag "bulma.png", alt: "plesir" %>
+                Plesir.com
             </a>
             <span class="navbar-burger burger" data-target="navbarMenu">
                 <span></span>
@@ -43,7 +44,7 @@
                             <%= current_user.email %>
                         </a>
                         <div class="navbar-dropdown">
-                            <a class="navbar-item">
+                            <a class="navbar-item" href="/articles">
                                 Dashboard
                             </a>
                             <a class="navbar-item">
