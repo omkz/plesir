@@ -6,16 +6,18 @@
         </div>
         <div class="section">
             <div class="box">
+              <%= form_tag(home_index_path, method: "get") do %>
                 <div class="field has-addons">
                     <div class="control is-expanded">
-                        <input class="input has-text-centered" type="search" placeholder="» » » » » » find me « « « « « «">
+                        <%= text_field_tag :search, params[:search], placeholder: "Search Articles", class: "input has-text-centered"   %>
                     </div>
                     <div class="control">
-                        <a class="button is-info">Search</a>
+                        <%= submit_tag 'Search', class: "button is-info" %>
                     </div>
                 </div>
+                <% end %>
             </div>
-            <!-- Developers -->
+            
             <div class="row columns is-multiline">
                 <% @articles.each do|article| %>
                   <div class="column is-one-third">
@@ -49,7 +51,6 @@
                
                 
             </div>
-            <!-- End Developers -->
 
         </div>
     </div>
