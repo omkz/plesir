@@ -1,8 +1,8 @@
 <!-- START NAV -->
-<nav class="navbar is-info">
+<nav class="navbar is-info is-fixed-top">
     <div class="container">
         <div class="navbar-brand">
-            <a class="navbar-item" href="../">
+            <a class="navbar-item is-size-5" href="../">
                 <%# image_tag "bulma.png", alt: "plesir" %>
                 Plesir.com
             </a>
@@ -14,34 +14,19 @@
         </div>
         <div id="navbarMenu" class="navbar-menu">
             <div class="navbar-end">
-                <a class="navbar-item is-active">
-                    Hot
+                <a class="navbar-item">
+                    Natural
                 </a>
                 <a class="navbar-item">
-                    Fresh
-                </a>
-                <a class="navbar-item">
-                    Friends
-                </a>
-                <a class="navbar-item">
-                    Beach
-                </a>
-                <a class="navbar-item">
-                    Mountain
+                    Culture
                 </a>
                 <a class="navbar-item">
                     Culinary
                 </a>
-                <a class="navbar-item">
-                    History
-                </a>
-                <a class="navbar-item">
-                    Photos
-                </a>
                 <% if user_signed_in? %>
                     <div class="navbar-item has-dropdown is-hoverable">
                         <a class="navbar-link">
-                            <%= current_user.email %>
+                            <%= current_user.username %>
                         </a>
                         <div class="navbar-dropdown">
                             <a class="navbar-item" href="/articles">
